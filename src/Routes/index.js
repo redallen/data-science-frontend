@@ -14,11 +14,11 @@ export const Routes = () => {
       }
     >
       <Switch>
-        <Route path="/" exact component={LauncherPage} />
         <Route path="/enabled" component={() => 'enabled'} />
         <Route path="/resources" component={() => 'resources'} />
+        <Route path="/explore" exact component={LauncherPage} />
         <Route>
-          <Redirect to="/" />
+          <Redirect to="/explore" />
         </Route>
       </Switch>
     </Suspense>
