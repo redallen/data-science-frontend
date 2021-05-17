@@ -34,7 +34,7 @@ module.exports = new webpack.container.ModuleFederationPlugin({
   shared: singletonDeps.reduce((acc, dep) => {
       const requiredVersion = dependencies[dep];
       if (requiredVersion) {
-        acc[dep] = { singleton: true, requiredVersion };
+        acc[dep] = { singleton: true, eager: true, requiredVersion };
       }
       return acc;
     }, {})
